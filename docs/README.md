@@ -6,7 +6,19 @@
 
 ## 安装
 
-### Mac / Linux / WSL
+### 推荐：`npx skills`（cross-platform 一行）
+
+```bash
+npx skills add hanzhipeng0903/claude-skill-toolkit -g -y -a claude-code
+```
+
+需要 Node ≥ 18。`-g` 装到 user-level（`~/.claude/skills/toolkit/`），`-y` 跳过确认，`-a claude-code` 指定只装到 Claude Code（如果你机器上还有 Cursor / Codex 等其他 agent，去掉这个 flag 会一起装）。
+
+### 备用：直接下载 SKILL.md
+
+不想装 Node 的话直接 curl：
+
+#### Mac / Linux / WSL
 
 ```bash
 mkdir -p ~/.claude/skills/toolkit && \
@@ -14,7 +26,7 @@ mkdir -p ~/.claude/skills/toolkit && \
   -o ~/.claude/skills/toolkit/SKILL.md
 ```
 
-### Windows PowerShell
+#### Windows PowerShell
 
 ```powershell
 $dir = "$env:USERPROFILE\.claude\skills\toolkit"
@@ -80,7 +92,11 @@ skill 只含**通用**工作流；项目特定规范放在每个项目根的 `.c
 
 ## 更新
 
-重新跑安装命令即可，会覆盖旧版本。
+```bash
+npx skills update toolkit
+```
+
+或者重新跑安装命令，会覆盖旧版本。
 
 ## 反馈
 
